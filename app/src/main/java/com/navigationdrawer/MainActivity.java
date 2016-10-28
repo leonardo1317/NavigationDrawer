@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
 
           fragment = new FragmentCamera();
           getSupportFragmentManager().beginTransaction()
-                  .add(R.id.content_main,fragment)
+                  .replace(R.id.content_main,fragment)
                   .commit();
 
 
@@ -61,6 +61,17 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+   /* @Override
+    public void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState,"myfragment",fragment);
+    }
+    @Override
+    public void onRestoreInstanceState(Bundle inState){
+        super.onRestoreInstanceState(inState);
+        fragment = getSupportFragmentManager().getFragment(inState,"myfragment");
+
+    }*/
 
     @Override
     public void onBackPressed() {

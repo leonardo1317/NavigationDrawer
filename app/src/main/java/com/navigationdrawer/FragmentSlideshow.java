@@ -20,7 +20,7 @@ public class FragmentSlideshow extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragment_slideshow, container, false);
-        //container.removeAllViews(); //ESTA LINEA DE CODIGO
+        container.removeAllViews(); //ESTA LINEA DE CODIGO
         return view;
     }
 

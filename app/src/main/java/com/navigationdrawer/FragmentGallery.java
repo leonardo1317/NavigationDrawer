@@ -19,7 +19,7 @@ public class FragmentGallery extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragment_gallery, container, false);
-       // container.removeAllViews(); //Esta linea elimina todas views del activity main
+        container.removeAllViews(); //Esta linea elimina todas views del activity main
         return view;
     }
 
