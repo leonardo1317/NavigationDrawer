@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         private NavigationView navigationView;
         private Fragment fragment = null;
-        private boolean numero = false;
+        private boolean finalize = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
 
         } else {
-             if(numero==false){
+             if(finalize==true){
                 finish();
             }else {
                  getSupportActionBar().setTitle("Import");
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
                  super.onBackPressed();
              }
         }
-        Log.i("numero", String.valueOf(numero));
+        Log.i("finalize", String.valueOf(finalize));
 
 
     }
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         boolean FragmentTransaction = false;
-        numero = true;
+        finalize = false;
        // Fragment fragment = null;
 
 
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new FragmentCamera();
             FragmentTransaction = true;
           ///  navigationView.getMenu().getItem(0).setChecked(true);
-               numero = false;
+               finalize = true;
 
         } else if (id == R.id.nav_gallery) {
             fragment = new FragmentGallery();
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity
             getSupportActionBar().setTitle(item.getTitle());
 
 
-            Log.i("numero", String.valueOf(numero));
+            Log.i("finalize", String.valueOf(finalize));
 
         }
 
